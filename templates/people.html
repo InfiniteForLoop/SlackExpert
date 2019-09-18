@@ -1,0 +1,18 @@
+{% extends 'template.html' %}
+
+{% block body %}
+  <div id="title" class="container-fluid text-center">People Search</div>
+  
+  <div id="holderBox" class="container-fluid img-rounded text-center">
+    {% from "_formhelpers.html" import render_field %}
+    <form method=post>
+      <dl>
+        {{ render_field(form.search) }}
+      </dl>
+      <p><input type=submit value="genius finder" id="search" class="btn btn-primary">
+    </form>
+  </div>
+
+  <div id="credit" class="text-center">Created by: <br>Haley Cao<br>Jason Zhang<br>Jeremy Lee<br>Jiahe Lyu<br>Kobi Nauenberg<br>Weilin Liu</div>
+{% endblock %}
+

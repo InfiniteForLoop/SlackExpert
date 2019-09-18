@@ -1,0 +1,27 @@
+#### DATA SOURCE ####
+Technical conversations are obtained from  https://www.kaggle.com/stackoverflow/stacksample
+Due to the size is still too large, 10000 users are selected in the dataset
+Username is randomly generated based on https://www.kaggle.com/samrat77/baby-names-dataset/
+
+#### FILES ####
+1. key_words.json: 
+    key: word string
+    value: tf-idf
+
+2. user_info.json
+    key: user_id
+    value: list of dict
+    value[i]: {'name':string, 'tag':list of string, 'html': list of string user written}
+
+3. word_user_score.json
+    key: word string
+    value: list of dict, sorted by score in descending order
+    value[i]: {'user_id': user id, 'score': float value of word freqency in user_id docs}
+
+#### EXAMPLE IN PYTHON ####
+    key_words_test = json.load(open('output/key_words.json'))
+    print(key_words_test['version'])
+    word_user_score_test = json.load(open('output/word_user_score.json'))
+    print(word_user_score_test['happy'])
+    user_info_test = json.load(open('output/user_info.json'))
+    print(user_info_test['60'])
